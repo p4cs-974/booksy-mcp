@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "booksy",
+  "version": "0.2.0",
+  "description": "Booksy Brazil customer API: search shops, check availability, and list, preview, book, or cancel appointments.",
+  "author": {
+    "name": "Pedro Alexandre Custódio Silva (p4cs)"
+  },
+  "license": "MIT",
+  "keywords": ["booksy", "barber", "salon", "appointments", "brazil", "mcp"]
+}

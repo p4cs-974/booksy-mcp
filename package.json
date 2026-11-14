@@ -1,0 +1,32 @@
+{
+  "name": "booksy-mcp",
+  "version": "0.2.0",
+  "description": "Unofficial MCP server and Agent Plugin for Booksy's Brazil customer API. Not affiliated with Booksy.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Pedro Alexandre Custódio Silva (p4cs)",
+  "bin": {
+    "booksy-mcp": "./server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "server.mjs",
+    "plugin.json",
+    "mcp.json",
+    "skills/",
+    "README.md",
+    "README.pt-BR.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "booksy",
+    "mcp",
+    "agent-plugin",
+    "barber",
+    "salon",
+    "appointments",
+    "brazil"
+  ]
+}

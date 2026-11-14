@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+*.log
+.DS_Store
+.cache/
+tmp/
+api_key
+token
+fingerprint
