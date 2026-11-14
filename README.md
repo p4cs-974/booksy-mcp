@@ -8,6 +8,26 @@ This is an unofficial, community-maintained project. It is **not affiliated with
 
 Coverage is Brazil only. The `BOOKSY_COUNTRY` environment variable exists, but only `br` has been tested.
 
+## One-click setup for agents
+
+Click the copy icon on the block below and paste it into your coding agent, such as Cursor, Claude Code, Codex, or OpenCode.
+
+```text
+Set up Booksy Brazil MCP for my coding agent on this machine.
+
+1. Clone https://github.com/p4cs-974/booksy-mcp into a suitable local directory, or reuse an existing clone without overwriting local changes. Read its README.md and skills/booksy/SKILL.md. Verify Node.js 18 or later is available. There are no npm dependencies to install. Run the server with node server.mjs.
+
+2. Add a stdio MCP server named booksy to this agent's MCP configuration, preserving existing entries. Use command "node" and args ["/absolute/path/to/server.mjs"], replacing the path with the actual absolute path in the clone. For Cursor, .cursor/mcp.json is one option; use the equivalent configuration for other clients. The repository's mcp.json uses args ["./server.mjs"] and cwd "${PLUGIN_ROOT}" for clients implementing Agent Plugins 1.0.0. Do not assume that variable works in a normal MCP configuration.
+
+3. If this agent supports skills, install skills/booksy/SKILL.md using its supported skill installation mechanism.
+
+4. Ask me for a Booksy customer access token through a secure input mechanism, never ordinary chat. Prefer storing it outside the repo at ~/.config/booksy/token with mode 600. Alternatively, use BOOKSY_ACCESS_TOKEN in the server's environment. Never hardcode the token or write it into chat logs, issues, or the repo. If secure input is unavailable, ask me to create the token file locally. Token lookup order is non-empty BOOKSY_ACCESS_TOKEN, otherwise the file at BOOKSY_TOKEN_FILE if set, otherwise ~/.config/booksy/token. Email/password login is unsupported. If I need help, point me to "Getting a customer access token" in README.md to copy x-access-token from my existing browser session. Do not scrape the token.
+
+5. Reload the MCP client if needed. Verify by calling search_businesses with {"query":"barbearia"}; query is required and location is optional. search_businesses, get_business, and get_free_slots work without a token, so run this check even if I skip token setup. Account tools require a token. Do not call create_booking or cancel_booking during setup.
+
+Report the configuration and skill paths, verification result, and any remaining steps without revealing secrets.
+```
+
 ## Requirements
 
 - **Node.js 18 or later** (the server uses the global `fetch` API and `AbortSignal.timeout`)
